@@ -1,0 +1,33 @@
+{
+  // Language version of C3.
+  "langrev": "1",
+  // Warnings used for all targets.
+  "warnings": ["no-unused"],
+  // Directories where C3 library files may be found.
+  "dependency-search-paths": ["."],
+  // Libraries to use for all targets.
+  "dependencies": ["c3httparser"],
+  // Authors, optionally with email.
+  "authors": ["luxluth <delphin.blehoussi93@gmail.com>"],
+  // Version using semantic versioning.
+  "version": "0.1.0",
+  // Output location, relative to project file.
+  "output": "build",
+  "targets": {
+    "c3httparser": {
+      // Executable or library.
+      "type": "executable",
+      // Additional libraries, sources
+      // and overrides of global settings here.
+      "sources": ["./test/*"]
+    }
+  },
+  // Set safety (contracts, runtime bounds checking, null pointer checks etc) on or off.
+  "safe": true,
+  // Global settings.
+  // CPU name, used for optimizations in the LLVM backend.
+  "cpu": "generic",
+  // Optimization: "O0", "O1", "O2", "O3", "O4", "O5", "Os", "Oz".
+  "opt": "Oz"
+}
+
