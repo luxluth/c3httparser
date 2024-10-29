@@ -1,5 +1,4 @@
 module c3httparser;
-import std::io;
 
 enum HTTPMethod {
   /** Used to establish a network connection to a resource. **/
