@@ -180,7 +180,7 @@ fn PartialResponse! parse_response(char[] content, Allocator allocator = allocat
   }
 
   String[] head_value = head_lines[0].tsplit(" ", 3);
-  if (head_value.len != 3) {
+  if (head_value.len != 2 && head_value.len != 3) {
     return HTTParserParsingError.INVALID_HEADER?;
   }
 
@@ -199,7 +199,7 @@ fn PartialResponse! parse_response(char[] content, Allocator allocator = allocat
 
   resp.http_version =  version;
   resp.status = head_value[1];
-  resp.status_message = head_value[2];
+  resp.status_message = head_value.len == 2 ? "" : head_value[2];
   resp.headers = parse_header_fields(header_lines, allocator)!;
 
   return resp;
